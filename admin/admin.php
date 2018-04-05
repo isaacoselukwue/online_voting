@@ -76,7 +76,7 @@
           </ul>
         </li>
         
-        <li><a href="http://localhost/online-voting-system-using-php-and-mysql-master/Online-Voting-System-using-php-and-mysql-master/online_voting/index.php">Voter Panel</a></li>
+        <li><a href="http://localhost/online_voting/index.php">Voter Panel</a></li>
         <li><a href="logout.php">Logout</a></li>
 
       </ul>

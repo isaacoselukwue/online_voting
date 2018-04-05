@@ -18,7 +18,8 @@
 			//or die( mysqli_error() );
 
 		die( "A new administrator account has been created." );
-	}
+  }
+
 	//Process
 	if (isset($_GET['id']) && isset($_POST['update']))
 	{
@@ -107,7 +108,7 @@
 <div >
 <table width="380" align="center">
 <CAPTION><h3>ADD NEW ADMIN</h3></CAPTION>
-<form name="fmCandidates" id="fmCandidates" action="manage-admins.php" method="post" onsubmit="return adminsValidate(this)">
+<form name="fmadminstrtors" id="fmadminstrators" action="manage-admins.php" method="post" onsubmit="return adminsValidate(this)">
 <tr>
     <td bgcolor="#FAEBD7">Admin Name</td>
     <td bgcolor="#FAEBD7"><input type="text" name="name" /></td>
@@ -118,12 +119,7 @@
     
     <td bgcolor="#7FFFD4"><SELECT NAME="position" id="position">select
     <OPTION VALUE="select">select
-    <?php
-        //loop through all table rows
-        while ($row= mysqli_fetch_array($positions_retrieved)){
-          echo "<OPTION VALUE=$row[position_name]>$row[position_name]";
-        }
-    ?>
+    
     </SELECT>
     </td>
 </tr>
@@ -134,28 +130,8 @@
 </table>
 <hr>
 <table border="0" width="620" align="center">
-<CAPTION><h3>AVAILABLE ADMIN</h3></CAPTION>
-<tr>
-<th>Admin ID</th>
-<th>Candidate Name</th>
-<th>Candidate Position</th>
-</tr>
 
-<?php
-    //loop through all table rows
-    while ($row= mysqli_fetch_array($result)){
-    echo "<tr>";
-    echo "<td>" . $row['admin_id']."</td>";
-    echo "<td>" . $row['first_name']."</td>";
-    echo "<td>" . $row['last_name']."</td>";
-    echo "<td>" . $row['email']."</td>";
-    echo "<td>" . $row['password']."</td>";
-    echo '<td><a href="manage-admins.php?id=' . $row['admin_id'] . '">Delete Candidate</a></td>';
-    echo "</tr>";
-    }
-    mysqli_free_result($result);
-    mysqli_close($mysqli);
-?>
+
 
 </table>
 <hr>
